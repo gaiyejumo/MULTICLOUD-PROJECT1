@@ -19,3 +19,36 @@
 - Click on **Next**
 - Review all the details
 - Click on **Create user**
+
+## Creating the Access Key for the terraform-en-1 user using the IAM service
+
+- Access the **terraform-en-1** user
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/133a717b-f434-4d98-8f6c-3f2e2ac01aac)
+
+- Click on the Security credentials tab
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/feba1499-7be2-47a9-a99c-2f3a04b4e26d)
+
+- Navigate to the **Access keys** section
+- Click on **Create access key**
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/250c863e-422d-4e00-b38a-db7d4cc99657)
+
+- Select Command Line Interface (CLI) and I understand the above recommendation and want to proceed to create an access key.
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/5e963272-7e2b-41b0-9988-2dd4ca98914b)
+
+- Click on **Next**.
+- Click on **Create access key**
+  
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/d9ef6e3f-060a-4583-81b7-d43e30c87352)
+
+- Click on Download .csv file
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/23f88e38-bb83-4435-a1ad-68b7d0f75fcd)
+
+- After the download finishes, click on Done.
+- Once the download is complete, rename the **.csv** file to **key.csv**
+
+
