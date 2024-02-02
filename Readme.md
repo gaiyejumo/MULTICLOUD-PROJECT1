@@ -62,8 +62,11 @@
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/52e3cd1e-fea1-4b9a-9f7c-ba1a5f95b0f7)
 
 - Download the mission1.zip file in the Google Cloud shell using the wget command. Copy and paste:
-  
+
+```
 wget https://tcb-public-events.s3.amazonaws.com/icp/mission1.zip
+
+```
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/77f2f80c-f8c6-4013-89ab-95d8162b3862)
 
@@ -78,7 +81,7 @@ Step 3
 
 ls
 
-- Result
+Result
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/71d0f145-529d-4b41-a2a1-a30e1a5777cc)
 
@@ -102,3 +105,134 @@ cd mission1/en
 chmod +x *.sh
 ```
 
+Result
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/257185bb-3aeb-4276-adc8-25a2dffa92da)
+
+- Execute the commands below to prepare the AWS and GCP environment
+
+```
+mkdir -p ~/.aws/
+
+```
+
+```
+touch ~/.aws/credentials_multiclouddeploy
+
+```
+
+```
+./aws_set_credentials.sh key.csv
+
+```
+
+```
+GOOGLE_CLOUD_PROJECT_ID=$(gcloud config get-value project)
+
+```
+
+```
+gcloud config set project $GOOGLE_CLOUD_PROJECT_ID
+
+```
+
+- Click on Authorize
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/4d4a27d4-cf63-4890-b346-2dc7a4279976)
+
+- Execute the command below to set the project in the Google Cloud Shell
+```
+./gcp_set_project.sh
+
+```
+
+- Execute the commands to enable the Kubernetes, Container Registry, and Cloud SQL APIs
+
+```
+gcloud services enable containerregistry.googleapis.com
+
+```
+
+```
+gcloud services enable container.googleapis.com
+
+```
+
+```
+gcloud services enable sqladmin.googleapis.com
+
+```
+
+```
+gcloud services enable cloudresourcemanager.googleapis.com
+
+```
+
+```
+gcloud services enable serviceusage.googleapis.com
+```
+
+```
+gcloud services enable compute.googleapis.com
+```
+
+```
+gcloud services enable servicenetworking.googleapis.com --project=$GOOGLE_CLOUD_PROJECT_ID
+```
+
+Ensure your Kuberetes Cluster is enabled!
+
+## Running Terraform to provision MultiCloud infrastructure in AWS and Google Cloud
+
+- Execute the following commands to provision infrastructure resources
+```
+cd ~/mission1/en/terraform/
+
+```
+
+```
+terraform init
+
+```
+
+```
+terraform plan
+
+```
+
+```
+terraform apply
+
+```
+
+Attention: The provisioning process can take between 15 to 25 minutes to finish. Keep the CloudShell open during the process. If disconnected, click on Reconnect when the session expires (the session expires after 5 minutes of inactivity by default)
+
+# Cleaning Up and Starting Over
+
+If you feel that you might have made some mistake, the best option is to clean up your Cloud Shell and start over again. Please use the commands below to clean up your Cloud Shell:
+
+```json
+cd ~
+rm -rf mission*
+rm -rf .aws
+```
+
+# Security Tips
+
+- For production environments, it's recommended to use only the Private Network for database access.
+- Never provide public network access (0.0.0.0/0) to production databases. ⚠️
+# Cleaning Up and Starting Over
+
+If you feel that you might have made some mistake, the best option is to clean up your Cloud Shell and start over again. Please use the commands below to clean up your Cloud Shell:
+
+```json
+cd ~
+rm -rf mission*
+rm -rf .aws
+```
+
+# Security Tips
+
+- For production environments, it's recommended to use only the Private Network for database access.
+- Never provide public network access (0.0.0.0/0) to production databases. ⚠️
+
+**Step 1 Completed 🚀🎉**
