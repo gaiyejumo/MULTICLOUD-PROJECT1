@@ -51,4 +51,54 @@
 - After the download finishes, click on Done.
 - Once the download is complete, rename the **.csv** file to **key.csv**
 
+# Steps in Google Cloud Platform (GCP)
+
+## Preparing the environment to run Terraform
+
+- Access the Google Cloud Console ([console.cloud.google.com](http://console.cloud.google.com/)) **and log in with your newly created account**
+- Open the Cloud Shell
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/670f60f6-a22d-4234-92cb-fb70c3f0c74e)
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/52e3cd1e-fea1-4b9a-9f7c-ba1a5f95b0f7)
+
+- Download the mission1.zip file in the Google Cloud shell using the wget command. Copy and paste:
+  
+wget https://tcb-public-events.s3.amazonaws.com/icp/mission1.zip
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/77f2f80c-f8c6-4013-89ab-95d8162b3862)
+
+- Upload the key.csv file to the Cloud Shell using the browser
+Step 1
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/9a133300-145e-4371-857c-93905cbd86de)
+Step 2
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/0eb64af8-cdfc-4e80-b4fe-76953fd77a52)
+Step 3
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/404ff8c9-f6a7-47a6-b8fd-75bc8b12ab84)
+- Verify if the mission1.zip and key.csv files are in the folder in the Cloud Shell using the command below
+
+ls
+
+- Result
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/71d0f145-529d-4b41-a2a1-a30e1a5777cc)
+
+- Execute the file preparation commands:
+```
+unzip mission1.zip
+
+```
+
+```
+mv key.csv mission1/en
+
+```
+
+```
+cd mission1/en
+
+```
+
+```
+chmod +x *.sh
+```
 
