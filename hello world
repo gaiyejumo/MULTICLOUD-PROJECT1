@@ -1,0 +1,10 @@
+# Steps in Amazon Web Services (AWS)
+
+## Creating the terraform-en-1 user using the IAM service
+
+- Access the AWS console ([https://aws.amazon.com](https://aws.amazon.com/)) **and log in with your newly created account**. In the search bar, type IAM. In the Services section, click on IAM.
+- Click on Users and then Add users, enter the name **terraform-en-1** and click Next to create a programmatic type user.
+    
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/411f9cbc-97ff-46cc-9e18-9d12d9b5c023/Untitled.png)
+    
+- After advancing, in **Set permissions**, click on the Attach existing policies directly button.
