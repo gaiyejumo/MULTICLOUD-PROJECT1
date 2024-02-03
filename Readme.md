@@ -239,3 +239,43 @@ rm -rf .aws
 - Never provide public network access (0.0.0.0/0) to production databases. ⚠️
 
 **🎉🚀🚀🚀🚀🚀🚀🚀Step 1 Completed 🚀🚀🚀🚀🚀🚀🚀🎉**
+
+# Step 2
+
+- Access AWS console and go to IAM service
+- Under Access management, Click in "Users", then "Add users". Insert the User name **luxxy-covid-testing-system-en-app1** and click in **Next** to create a programmatic user.
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/94968d56-4a23-47bb-bda6-f3f05da23dee)
+
+On Set permissions, Permissions options, click in "Attach policies directly" button.
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/17ffcbe1-3b58-4fe8-9427-2bd72ab14458)
+
+- Type **AmazonS3FullAccess** in **Search**.
+- Select **AmazonS3FullAccess**
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/cf3e242c-be5f-4a7d-8269-926a9873b3c0)
+
+- Click in **Next**
+- Review all details and click in Create user
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/840f7659-0922-4efe-964d-f951ebe1712b)
+
+### **Steps to create access key:**
+
+- Click on the user you have created.
+- Go to Security credentials tab.
+- Scroll down and go to Access keys section.
+- Click on Create access key
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/21b5ba11-6543-4724-b695-d6259eddcc63)
+
+- Select **Command Line Interface (CLI)** and **I understand the above recommendation and want to proceed to create an access key** checkbox.
+- Click Next
+- Click on Create access key
+- Click on Download .csv file
+- After download, click Done.
+- Now, rename .csv file downloaded to **luxxy-covid-testing-system-en-app1.csv**
+
+
+
