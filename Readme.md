@@ -79,7 +79,10 @@ Step 3
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/404ff8c9-f6a7-47a6-b8fd-75bc8b12ab84)
 - Verify if the mission1.zip and key.csv files are in the folder in the Cloud Shell using the command below
 
+```
 ls
+
+```
 
 Result
 
