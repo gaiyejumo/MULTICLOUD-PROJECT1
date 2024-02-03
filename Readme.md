@@ -277,5 +277,3 @@ On Set permissions, Permissions options, click in "Attach policies directly" but
 - After download, click Done.
 - Now, rename .csv file downloaded to **luxxy-covid-testing-system-en-app1.csv**
 
-
-
