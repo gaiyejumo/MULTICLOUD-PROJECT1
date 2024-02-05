@@ -5,7 +5,6 @@
 - Leverage Kubernetes and Docker to host our application in a containerized fashion
 - How to migrate on-premises application files and database to a Multi-cloud environment
 
-# Solution Architecture
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/37578764-c448-4edd-86c9-6dbc0b2ce8e7)
 
 # Steps in Amazon Web Services (AWS)
