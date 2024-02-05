@@ -1,3 +1,10 @@
+PROJECT DEMONSTRATES THE FOLLOWING
+
+- How to create AWS and GCP users and add policies to it through User Group Policies
+- How to deploy infrastructure as a code using Terraform
+- Leverage Kubernetes and Docker to host our application in a containerized fashion
+- How to migrate on-premises application files and database to a Multi-cloud environment
+
 # Steps in Amazon Web Services (AWS)
 
 ## Creating the terraform-en-1 user using the IAM service
