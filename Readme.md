@@ -222,7 +222,7 @@ Attention: The provisioning process can take between 15 to 25 minutes to finish.
 
 If you feel that you might have made some mistake, the best option is to clean up your Cloud Shell and start over again. Please use the commands below to clean up your Cloud Shell:
 
-```json
+```
 cd ~
 rm -rf mission*
 rm -rf .aws
@@ -236,7 +236,7 @@ rm -rf .aws
 
 If you feel that you might have made some mistake, the best option is to clean up your Cloud Shell and start over again. Please use the commands below to clean up your Cloud Shell:
 
-```json
+```
 cd ~
 rm -rf mission*
 rm -rf .aws
@@ -413,11 +413,11 @@ In case you have encountered any problem/error and want to reset the environment
 **Step 2**
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/61b52403-b904-4731-899d-e7202ad43085)
 
-```json
+```
 kubectl delete deployment luxxy-covid-testing-system
 ```
 
-```json
+```
 kubectl delete service luxxy-covid-testing-system
 ```
 
@@ -428,35 +428,35 @@ kubectl delete service luxxy-covid-testing-system
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/5eed99d6-0143-4dbb-ba38-8f334855b62e)
 
 [Google Cloud] Delete remaining resources w/ Terraform - Cloud Shell
-```json
+```
 cd ~/mission1/en/terraform/
 ```
 
-```json
+```
 terraform destroy
 ```
 
 ## Clean the Cloud Shell in AWS and Google Cloud
 ### AWS
 
-```json
+```
 cd ~
 ```
 
-```json
+```
 rm -rf mission*
 ```
 
 Google Cloud
-```json
+```
 cd ~
 ```
 
-```json
+```
 rm -rf mission*
 ```
 
-```json
+```
 rm -rf .ssh
 ```
-
+**🎉🚀🚀🚀🚀🚀🚀🚀Step 2 Completed 🚀🚀🚀🚀🚀🚀🚀🎉**
