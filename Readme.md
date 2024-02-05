@@ -280,3 +280,21 @@ On Set permissions, Permissions options, click in "Attach policies directly" but
 - After download, click Done.
 - Now, rename .csv file downloaded to **luxxy-covid-testing-system-en-app1.csv**
 
+https://file.notion.so/f/f/0d1b678b-cd91-4256-93c7-73b2e82396d5/e42adbaf-eb30-44dd-a3b4-23c0e8346ccf/SQL_User_Creation_EDITED.mp4?id=9417f9ba-95c7-45fc-aab8-0a660016e1a1&table=block&spaceId=0d1b678b-cd91-4256-93c7-73b2e82396d5&expirationTimestamp=1707184800000&signature=UIP_IZZ93-HTfyzootcLIzAkrwyIIYlseH6mH5YgW_g
+
+- Connect to Google Cloud Shell
+- **Download** the mission2 files to Google Cloud Shell using the wget command as shown below
+    
+    ```
+    cd ~
+    ```
+    
+    ```
+    **wget https://tcb-public-events.s3.amazonaws.com/icp/mission2.zip**
+    ```
+    
+    ```
+    unzip mission2.zip
+    ```
+    
+- Connect to MySQL DB running on Cloud SQL (once it prompts for the password, provide **welcome123456**). **Don’t forget to replace the placeholder with your Cloud SQL Public IP**
