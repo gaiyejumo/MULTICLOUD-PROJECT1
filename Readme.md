@@ -304,15 +304,17 @@ On Set permissions, Permissions options, click in "Attach policies directly" but
   ```
 mysql --host=<replace_with_public_ip_cloudsql> --port=3306 -u app -p
 ​  ```
-Once you're connected to the database instance, create the products table for testing purposes
-use dbcovidtesting;
+
+- Once you're connected to the database instance, create the products table for testing purposes
 
   ```​
 source ~/mission2/en/db/create_table.sql
 ​  ```
+
   ```
 show tables;
 ​  ```
+
   ```
 exit;
 ​  ```
