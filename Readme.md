@@ -1,4 +1,4 @@
-PROJECT DEMONSTRATES THE FOLLOWING
+# PROJECT DEMONSTRATES THE FOLLOWING
 
 - How to create AWS and GCP users and add policies to it through User Group Policies
 - How to deploy infrastructure as a code using Terraform
