@@ -280,11 +280,11 @@ On Set permissions, Permissions options, click in "Attach policies directly" but
 - After download, click Done.
 - Now, rename .csv file downloaded to **luxxy-covid-testing-system-en-app1.csv**
 
-https://file.notion.so/f/f/0d1b678b-cd91-4256-93c7-73b2e82396d5/e42adbaf-eb30-44dd-a3b4-23c0e8346ccf/SQL_User_Creation_EDITED.mp4?id=9417f9ba-95c7-45fc-aab8-0a660016e1a1&table=block&spaceId=0d1b678b-cd91-4256-93c7-73b2e82396d5&expirationTimestamp=1707184800000&signature=UIP_IZZ93-HTfyzootcLIzAkrwyIIYlseH6mH5YgW_g
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/c7aa884b-8026-4f8d-a652-2ba53cc5d831)
 
 - Connect to Google Cloud Shell
 - **Download** the mission2 files to Google Cloud Shell using the wget command as shown below
-    
+-   
     ```
     cd ~
     ```
@@ -298,3 +298,21 @@ https://file.notion.so/f/f/0d1b678b-cd91-4256-93c7-73b2e82396d5/e42adbaf-eb30-44
     ```
     
 - Connect to MySQL DB running on Cloud SQL (once it prompts for the password, provide **welcome123456**). **Don’t forget to replace the placeholder with your Cloud SQL Public IP**
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/a8176b7a-be89-4f88-9376-721442fdfc2a)
+
+  ```
+mysql --host=<replace_with_public_ip_cloudsql> --port=3306 -u app -p
+​  ```
+Once you're connected to the database instance, create the products table for testing purposes
+use dbcovidtesting;
+
+  ```​
+source ~/mission2/en/db/create_table.sql
+​  ```
+  ```
+show tables;
+​  ```
+  ```
+exit;
+​  ```
