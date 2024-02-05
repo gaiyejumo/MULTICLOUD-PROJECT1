@@ -348,17 +348,16 @@ gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT_ID/luxxy-covid-testing-s
 cd ~/mission2/en/kubernetes
 luxxy-covid-testing-system.yaml
 
-				image: gcr.io/<PROJECT_ID>/luxxy-covid-testing-system-app-en:latest
+image: gcr.io/<PROJECT_ID>/luxxy-covid-testing-system-app-en:latest
 ...
-				- name: AWS_BUCKET
-          value: "luxxy-covid-testing-system-pdf-en-xxxx"
-        - name: S3_ACCESS_KEY
-          value: "xxxxxxxxxxxxxxxxxxxxx"
-        - name: S3_SECRET_ACCESS_KEY
-          value: "xxxxxxxxxxxxxxxxxxxx"
-        - name: DB_HOST_NAME
-          value: "172.21.0.3"
-
+- name: AWS_BUCKET
+ value: "luxxy-covid-testing-system-pdf-en-xxxx"
+- name: S3_ACCESS_KEY
+ value: "xxxxxxxxxxxxxxxxxxxxx"
+- name: S3_SECRET_ACCESS_KEY
+ value: "xxxxxxxxxxxxxxxxxxxx"
+- name: DB_HOST_NAME
+ value: "172.21.0.3"
 ```
 
 - Connect to the GKE (Google Kubernetes Engine) cluster via Console
@@ -367,6 +366,10 @@ luxxy-covid-testing-system.yaml
 
 - Step 2
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/02ae69f2-5fac-460e-8dbb-fef4472c6e53)
+
+```
+glcoud container clusters get-credentials luxxy-kubernetes-cluster-en --region us-east4 --project <PROJECT ID>
+```
 
 - Deploy the application Luxxy in the Cluster
 
@@ -389,4 +392,62 @@ kubectl apply -f luxxy-covid-testing-system.yaml
 - You should see the app up & running!
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/d5d12eea-227a-4c5a-87fa-e97d73eeb898)
+
+# Appendix I - Destroying the environment and starting over
+In case you have encountered any problem/error and want to reset the environment to start over, follow the step-by-step instructions below to remove the entire MultiCloud environment.
+
+## [Google Cloud] Delete Kubernetes resources
+
+**Step 1**
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/d61f9a87-1378-4b16-afe7-281dc209d977)
+
+**Step 2**
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/61b52403-b904-4731-899d-e7202ad43085)
+
+```json
+kubectl delete deployment luxxy-covid-testing-system
+```
+
+```json
+kubectl delete service luxxy-covid-testing-system
+```
+
+[Google Cloud] Delete VPC Peering
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/06147654-d6e8-495e-a7a7-5e11a47590b9)
+
+[AWS] Delete files inside of S3
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/5eed99d6-0143-4dbb-ba38-8f334855b62e)
+
+[Google Cloud] Delete remaining resources w/ Terraform - Cloud Shell
+```json
+cd ~/mission1/en/terraform/
+```
+
+```json
+terraform destroy
+```
+
+## Clean the Cloud Shell in AWS and Google Cloud
+### AWS
+
+```json
+cd ~
+```
+
+```json
+rm -rf mission*
+```
+
+Google Cloud
+```json
+cd ~
+```
+
+```json
+rm -rf mission*
+```
+
+```json
+rm -rf .ssh
+```
 
