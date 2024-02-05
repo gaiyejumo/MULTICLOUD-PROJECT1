@@ -536,3 +536,66 @@ aws s3 sync . s3://**luxxy-covid-testing-system-pdf-en-xxxx**
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/7c9bb052-faf9-41f1-985d-d8ef7a29e700)
 
 Mission completed, we have migrated an "on-premises" application & database to a MultiCloud Architecture!
+
+
+# Appendix I - Destroying the environment permanently
+
+After completing the hands-on project and gathering the implementation evidence, follow the step-by-step instructions below to remove the entire MultiCloud environment.
+
+## [Google Cloud] Delete Kubernetes resources
+
+**Step 1**
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/15031bf9-43f7-4414-a7a8-2b06c16ff62d)
+**Step 2**
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/450d7d49-6be8-4c6a-a7d0-8532e1210331)
+
+Json
+```
+kubectl delete deployment luxxy-covid-testing-system
+```
+
+```
+kubectl delete service luxxy-covid-testing-system
+```
+
+[Google Cloud] Delete VPC Peering
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/d80bebae-4e6b-4caa-ab16-8064e1f106b5)
+
+[AWS] Delete files inside of S3
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/c851b363-00f4-4bed-8404-3541bd56d8c2)
+
+[Google Cloud] Delete remaining resources w/ Terraform - Cloud Shell
+
+```
+cd ~/mission1/en/terraform/
+```
+
+```
+terraform destroy
+```
+Clean the Cloud Shell in AWS and Google Cloud
+```
+
+AWS
+```​
+cd ~
+```​
+
+```
+rm -rf mission*
+```​
+​
+Google Cloud
+
+```
+cd ~
+```
+
+```
+rm -rf mission*
+```
+
+```
+rm -rf .ssh
+```
+
