@@ -300,21 +300,93 @@ On Set permissions, Permissions options, click in "Attach policies directly" but
 - Connect to MySQL DB running on Cloud SQL (once it prompts for the password, provide **welcome123456**). **Don’t forget to replace the placeholder with your Cloud SQL Public IP**
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/a8176b7a-be89-4f88-9376-721442fdfc2a)
-
-  ```
+ 
+ ```
 mysql --host=<replace_with_public_ip_cloudsql> --port=3306 -u app -p
-​  ```
+ ```
 
-- Once you're connected to the database instance, create the products table for testing purposes
+- Once you're connected to the database instance, create the products table for testing purposes.
 
-  ```​
+ ```
+use dbcovidtesting;
+```
+
+```
 source ~/mission2/en/db/create_table.sql
-​  ```
+```
 
-  ```
+```
 show tables;
-​  ```
+```
 
-  ```
+```
 exit;
-​  ```
+```
+
+- Enable Cloud Build API via Cloud Shell.
+```
+gcloud services enable cloudbuild.googleapis.com
+```
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/2314c095-8f38-4b15-9d51-ca3b351c0eef)
+
+- Build the Docker image and push it to Google Container Registry.
+```
+GOOGLE_CLOUD_PROJECT_ID=$(gcloud config get-value project)
+```
+
+```
+cd ~/mission2/en/app
+```
+
+```
+gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT_ID/luxxy-covid-testing-system-app-en
+```
+
+- Open the Cloud Editor and edit the Kubernetes deployment file (luxxy-covid-testing-system.yaml) and update the variables below on line 33 in red with your <PROJECT_ID> on the Google Container Registry path, on line 42 AWS Bucket name, AWS Keys (open file luxxy-covid-testing-system-en-app1.csv and use Access key ID on line 44 and Secret access key on line 46)  and Cloud SQL Database Private IP on line 48.
+
+```
+cd ~/mission2/en/kubernetes
+luxxy-covid-testing-system.yaml
+
+				image: gcr.io/<PROJECT_ID>/luxxy-covid-testing-system-app-en:latest
+...
+				- name: AWS_BUCKET
+          value: "luxxy-covid-testing-system-pdf-en-xxxx"
+        - name: S3_ACCESS_KEY
+          value: "xxxxxxxxxxxxxxxxxxxxx"
+        - name: S3_SECRET_ACCESS_KEY
+          value: "xxxxxxxxxxxxxxxxxxxx"
+        - name: DB_HOST_NAME
+          value: "172.21.0.3"
+
+```
+
+- Connect to the GKE (Google Kubernetes Engine) cluster via Console
+- Step 1
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/2db9848b-3b7e-4c92-b4cb-39acc8ed1e3a)
+
+- Step 2
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/02ae69f2-5fac-460e-8dbb-fef4472c6e53)
+
+- Deploy the application Luxxy in the Cluster
+
+```
+cd ~/mission2/en/kubernetes
+```
+
+```
+kubectl apply -f luxxy-covid-testing-system.yaml
+```
+
+- Under **GKE** > **Workloads** > **Exposing Services**, get the application Public IP
+
+**Step 1**
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/8717e871-7875-4c7d-8fa3-e6e53c48af41)
+
+**Step 2**
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/5fdd1bbb-8cc1-4d65-94de-cc77f8b366f8)
+
+- You should see the app up & running!
+
+![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/d5d12eea-227a-4c5a-87fa-e97d73eeb898)
+
