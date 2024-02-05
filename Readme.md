@@ -273,6 +273,9 @@ On Set permissions, Permissions options, click in "Attach policies directly" but
 - Select **Command Line Interface (CLI)** and **I understand the above recommendation and want to proceed to create an access key** checkbox.
 - Click Next
 - Click on Create access key
+
+# Steps in Google Cloud Platform (GCP)
+- Navigate to Cloud SQL instance and create a new user **app** with password **welcome123456** on Cloud SQL MySQL database
 - Click on Download .csv file
 - After download, click Done.
 - Now, rename .csv file downloaded to **luxxy-covid-testing-system-en-app1.csv**
