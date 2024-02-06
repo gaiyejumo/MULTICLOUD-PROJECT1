@@ -228,10 +228,10 @@ rm -rf mission*
 rm -rf .aws
 ```
 
-# Security Tips
+# Security Tips ⚠️
 
 - For production environments, it's recommended to use only the Private Network for database access.
-- Never provide public network access (0.0.0.0/0) to production databases. ⚠️
+- Never provide public network access (0.0.0.0/0) to production databases.
 # Cleaning Up and Starting Over
 
 If you feel that you might have made some mistake, the best option is to clean up your Cloud Shell and start over again. Please use the commands below to clean up your Cloud Shell:
@@ -242,10 +242,10 @@ rm -rf mission*
 rm -rf .aws
 ```
 
-# Security Tips
+# Security Tips ⚠️
 
 - For production environments, it's recommended to use only the Private Network for database access.
-- Never provide public network access (0.0.0.0/0) to production databases. ⚠️
+- Never provide public network access (0.0.0.0/0) to production databases. 
 
 **🎉🚀🚀🚀🚀🚀🚀🚀Step 1 Completed 🚀🚀🚀🚀🚀🚀🚀🎉**
 
