@@ -549,7 +549,7 @@ After completing the hands-on project and gathering the implementation evidence,
 **Step 2**
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/450d7d49-6be8-4c6a-a7d0-8532e1210331)
 
-Json
+*Json codes*
 ```
 kubectl delete deployment luxxy-covid-testing-system
 ```
