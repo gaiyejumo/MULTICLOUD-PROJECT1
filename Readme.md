@@ -3,7 +3,7 @@
 - How to create AWS and GCP users and add policies to it through User Group Policies
 - How to deploy infrastructure as a code using Terraform
 - Leverage Kubernetes and Docker to host our application in a containerized fashion
-- How to migrate on-premises application files and database to a Multi-cloud environment
+- How to migrate on-premises application files and databases to a Multi-cloud environment
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/37578764-c448-4edd-86c9-6dbc0b2ce8e7)
 
@@ -12,7 +12,7 @@
 ## Creating the terraform-en-1 user using the IAM service
 
 - Access the AWS console ([https://aws.amazon.com](https://aws.amazon.com/)) **and log in with your newly created account**. In the search bar, type IAM. In the Services section, click on IAM.
-- Click on Users and then Add users, enter the name **terraform-en-1** and click Next to create a programmatic type user.
+- Click on Users and then Add users, enter the name **terraform-en-1**, and click Next to create a programmatic type user.
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/1b5f0a8b-4f67-4e48-9e68-0ac98a6b3a37)
 
@@ -44,7 +44,7 @@
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/250c863e-422d-4e00-b38a-db7d4cc99657)
 
-- Select Command Line Interface (CLI) and I understand the above recommendation and want to proceed to create an access key.
+- Select Command Line Interface (CLI) I understand the above recommendation and want to proceed to create an access key.
 
 ![image](https://github.com/gaiyejumo/MULTICLOUD-PROJECT1/assets/41402706/5e963272-7e2b-41b0-9988-2dd4ca98914b)
 
